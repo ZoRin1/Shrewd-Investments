@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Shrewd-Investments_app</string>
+    <string name="temp"><![CDATA[<]]></string>
+    <string name="temp1">搜</string>
 </resources>

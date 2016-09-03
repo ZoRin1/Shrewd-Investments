@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/search">
+    <TableLayout android:id="@+id/ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="1dp"/>
+        <TableRow>
+            <Button android:id="@+id/ok1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="@string/temp"
+                android:textSize="30sp"
+                />
+            <TextView android:id="@+id/ok2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Shrewd Investment"/>
+            <ImageButton android:id="@+id/ok3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                />
+        </TableRow>
+    </TableLayout>
+    <SearchView
+        android:id="@+id/Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ></SearchView>
+    <Button android:id="@+id/aha1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="行情"
+        />
+    <Button android:id="@+id/aha2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自选"
+        />
+    <Button android:id="@+id/aha3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="咨询"
+        />
+</LinearLayout>
