@@ -326,6 +326,10 @@ def updateMarketlist():
 def updatestocklist():
     conn= ms.connect(host='localhost',port = 3306,user='root', passwd='123456',db ='investment',charset="utf8")
     cur = conn.cursor()
+    cur.execute('delete from stocklist_sz')
+    cur.execute('delete from stocklist_sh')
+    cur.execute('delete from stocklist_cyb')
+    conn.commit()
     cur.execute ("SELECT code FROM mainlist")  
     rows = cur.fetchall()  
     for row in rows: 
