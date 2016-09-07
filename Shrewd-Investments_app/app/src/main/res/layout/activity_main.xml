@@ -10,7 +10,12 @@
     tools:context="cn.edu.nju.shrewd_investments_app.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" android:id="@+id/textView32"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton4" android:layout_below="@+id/textView32"
+            android:layout_alignParentLeft="true" android:src="@android:drawable/ic_menu_search"/>
 </RelativeLayout>
