@@ -479,8 +479,12 @@ def updateStockone():
         selectstr='select max(date) from stock_'+code
         cur.execute(selectstr)
         Maxdate = cur.fetchall()
-        if Maxdate==():
-            stockonelist=ts.get_hist_data(code)
+        date=Maxdate[0][0]
+        date = date+ datetime.timedelta(1)
+        now=time.strftime("%Y-%m-%d",time.localtime(time.time()))
+        t=date.strftime('%Y-%m-%d')
+        if t!=now:
+            stockonelist=ts.get_hist_data(code,t,now)
             stockone=pd.DataFrame(stockonelist)
             values=[]
             for index,row in stockone.iterrows():
@@ -489,23 +493,6 @@ def updateStockone():
             insertstr='insert into stock_'+code+' (date,open,high,close,low,volume,price_change,p_change,ma5,ma10,ma20,v_ma5,v_ma10,v_ma20,turnover) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             cur.executemany(insertstr,values)
             conn.commit()
-        else:
-            date=''
-            for maxD in Maxdate:
-                date=maxD[0]
-            date = date+ datetime.timedelta(1)
-            now=time.strftime("%Y-%m-%d",time.localtime(time.time()))
-            t=date.strftime('%Y-%m-%d')
-            if t!=now:
-                stockonelist=ts.get_hist_data(code,t,now)
-                stockone=pd.DataFrame(stockonelist)
-                values=[]
-                for index,row in stockone.iterrows():
-                    values.append((index,row['open'],row['high'],row['close'],row['low'],row['volume'],row['price_change'],row['p_change'],\
-                                   row['ma5'],row['ma10'],row['ma20'],row['v_ma5'],row['v_ma10'],row['v_ma20'],row['turnover']))
-                insertstr='insert into stock_'+code+' (date,open,high,close,low,volume,price_change,p_change,ma5,ma10,ma20,v_ma5,v_ma10,v_ma20,turnover) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
-                cur.executemany(insertstr,values)
-                conn.commit()
     cur.close()
     conn.close()
 #更新stockbigchange
