@@ -10,10 +10,9 @@ public class ReportPO {
 	private double epcf;//每股现金流量(元)
 	private double net_profits;//净利润(万元)
 	private double profits_yoy;//净利润同比(%)
-	private String distrib;//分配方案
 	private String report_date;//发布日期
 	public ReportPO(String code, String name, double eps, double eps_yoy, double bvps, double roe, double epcf,
-			double net_profits, double profits_yoy, String distrib, String report_date) {
+			double net_profits, double profits_yoy, String report_date) {
 		super();
 		this.code = code;
 		this.name = name;
@@ -24,7 +23,6 @@ public class ReportPO {
 		this.epcf = epcf;
 		this.net_profits = net_profits;
 		this.profits_yoy = profits_yoy;
-		this.distrib = distrib;
 		this.report_date = report_date;
 	}
 	public String getCode() {
@@ -80,12 +78,6 @@ public class ReportPO {
 	}
 	public void setProfits_yoy(double profits_yoy) {
 		this.profits_yoy = profits_yoy;
-	}
-	public String getDistrib() {
-		return distrib;
-	}
-	public void setDistrib(String distrib) {
-		this.distrib = distrib;
 	}
 	public String getReport_date() {
 		return report_date;

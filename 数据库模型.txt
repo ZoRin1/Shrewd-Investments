@@ -142,7 +142,6 @@ roe,净资产收益率(%)
 epcf,每股现金流量(元)
 net_profits,净利润(万元)
 profits_yoy,净利润同比(%)
-distrib,分配方案
 report_date,发布日期
 
 营运能力（operation）：
