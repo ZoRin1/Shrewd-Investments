@@ -9,8 +9,9 @@ public class HoldsPO {
 	private double count;//基金持股数（万股）
 	private double clast;//与上期相比
 	private double amount;//基金持股市值
+	private double ratio;//占流通盘比率
 	public HoldsPO(String code, String name, String date, double nums, double nlast, double count, double clast,
-			double amount) {
+			double amount,double ratio) {
 		super();
 		this.code = code;
 		this.name = name;
@@ -20,6 +21,7 @@ public class HoldsPO {
 		this.count = count;
 		this.clast = clast;
 		this.amount = amount;
+		this.ratio = ratio;
 	}
 	public String getCode() {
 		return code;
@@ -68,6 +70,12 @@ public class HoldsPO {
 	}
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+	public double getRatio() {
+		return ratio;
+	}
+	public void setRatio(double ratio) {
+		this.ratio = ratio;
 	}
 	
 	

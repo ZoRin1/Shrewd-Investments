@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import PO.BigChangePO;
 import PO.CashflowPO;
 import PO.DebtPayPO;
 import PO.GrowthPO;
@@ -41,9 +42,15 @@ public class test {
 //			System.out.println(shortPOs.get(i).getPrice());
 //			
 //		}
-		GetStockSerImp getStockSerImp=new GetStockSerImp();
-		NowStockPO nowStockPO=getStockSerImp.getNowStockPO("603558");
-		System.out.println(nowStockPO.getName());
+//		GetStockSerImp getStockSerImp=new GetStockSerImp();
+//		System.out.println(getStockSerImp.getBid("300523").getAv1());
+//		System.out.println(getStockSerImp.getStockBasic("300529").getReserved());
+//		ArrayList<BigChangePO> bigChangePOs=getStockSerImp.getStockBigChange("002387");
+//		for (int i = 0; i < bigChangePOs.size(); i++) {
+//			System.out.println(bigChangePOs.get(i).getTime());
+//		}
+//		NowStockPO nowStockPO=getStockSerImp.getNowStockPO("603558");
+//		System.out.println(nowStockPO.getName());
 //		ArrayList<StockPO> stockPOs=getStockSerImp.getHistoryStock("600859");
 //		for (int i = 0; i < stockPOs.size(); i++) {
 //			System.out.println(stockPOs.get(i).getTurnover());
@@ -54,6 +61,9 @@ public class test {
 //			System.out.println(nowStockPOs.get(i).getName());
 //		}
 
+		InvestSerImp investSerImp=new InvestSerImp();
+		System.out.println(investSerImp.getHolds("603077", "20141").getRatio());
+		
 		
 	}
 

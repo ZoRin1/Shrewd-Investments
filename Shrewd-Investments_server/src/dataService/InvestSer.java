@@ -19,18 +19,18 @@ public interface InvestSer {
 	public ArrayList<DistributePO> getdistribute(String code);
 	/**
 	 * 业绩报告季度，按每个公司每个季度来，存有2014年第一季度至2016第1季度
-	 * 2014第一季度表示为“2014-1”
-	 * @param code为股票代码，season为季度“2014-1”这类
+	 * 2014第一季度表示为“20141”
+	 * @param code为股票代码，season为季度“20141”这类
 	 * @author 熊凯奇xiong kaiqi
 	 *
 	 */
-	public ArrayList<PredictPO> getPredict(String code,String season);
+	public PredictPO getPredict(String code,String season);
 	/**
 	 * 基金持股季度，按每个公司每个季度来，存有2014年第一季度至2016第1季度
-	 * 2014第一季度表示为“2014-1”
-	 * @param code为股票代码，season为季度“2014-1”这类
+	 * 2014第一季度表示为“20141”
+	 * @param code为股票代码，season为季度“20141”这类
 	 * @author 熊凯奇xiong kaiqi
 	 *
 	 */
-	public ArrayList<HoldsPO> getHolds(String code,String season);
+	public HoldsPO getHolds(String code,String season);
 }

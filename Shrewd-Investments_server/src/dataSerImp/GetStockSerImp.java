@@ -206,19 +206,93 @@ public class GetStockSerImp implements GetStockSer {
 	@Override
 	public ArrayList<BigChangePO> getStockBigChange(String code) {
 		// TODO 自动生成的方法存根
-		return null;
+		ArrayList<BigChangePO> bigChangePOs=new ArrayList<>();
+		sql="select * from stockbigchange_"+code;
+		try {
+			Class.forName(DRIVER);
+			Connection connection=DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement preparedStatement=connection.prepareStatement(sql);
+			ResultSet resultSet=preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				bigChangePOs.add(new BigChangePO(code,resultSet.getString(1), resultSet.getDouble(2), resultSet.getDouble(3), resultSet.getDouble(4), resultSet.getString(5)));
+			}
+			preparedStatement.close();
+			connection.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bigChangePOs;
 	}
 
 	@Override
 	public StockBasicPO getStockBasic(String code) {
 		// TODO 自动生成的方法存根
-		return null;
+		StockBasicPO stockBasicPO = null;
+		sql="select * from mainlist where code ="+code;
+		try {
+			Class.forName(DRIVER);
+			Connection connection=DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement preparedStatement=connection.prepareStatement(sql);
+			ResultSet resultSet=preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				stockBasicPO=new StockBasicPO(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4),
+						resultSet.getDouble(5), resultSet.getDouble(6), resultSet.getDouble(7), resultSet.getDouble(8), resultSet.getDouble(9), 
+						resultSet.getDouble(10), resultSet.getDouble(11), resultSet.getDouble(12), resultSet.getDouble(13), resultSet.getDouble(14),
+						resultSet.getDouble(15), resultSet.getString(16));
+			}
+			preparedStatement.close();
+			connection.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return stockBasicPO;
 	}
+	
 
 	@Override
 	public BidPO getBid(String code) {
 		// TODO 自动生成的方法存根
-		return null;
+		BidPO bidPO = null;
+		switch(code.charAt(0)){
+		case '0':
+			sql="select b1_v, b1_p, b2_v, b2_p, b3_v, b3_p, b4_v, b4_p, b5_v, b5_p, a1_v, a1_p, a2_v, a2_p, a3_v, a3_p, a4_v, a4_p, a5_v, a5_p from stocklist_sz where code ="+code;
+			break;
+		case '3':
+			sql="select b1_v, b1_p, b2_v, b2_p, b3_v, b3_p, b4_v, b4_p, b5_v, b5_p, a1_v, a1_p, a2_v, a2_p, a3_v, a3_p, a4_v, a4_p, a5_v, a5_p from stocklist_cyb where code ="+code;
+			break;
+		case '6':
+			sql="select b1_v, b1_p, b2_v, b2_p, b3_v, b3_p, b4_v, b4_p, b5_v, b5_p, a1_v, a1_p, a2_v, a2_p, a3_v, a3_p, a4_v, a4_p, a5_v, a5_p from stocklist_sh where code ="+code;
+			break;
+		}
+		try {
+			Class.forName(DRIVER);
+			Connection connection=DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement preparedStatement=connection.prepareStatement(sql);
+			ResultSet resultSet=preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				bidPO=new BidPO(code, resultSet.getDouble(1), resultSet.getDouble(2), resultSet.getDouble(3), resultSet.getDouble(4), resultSet.getDouble(5),
+						resultSet.getDouble(6), resultSet.getDouble(7), resultSet.getDouble(8), resultSet.getDouble(9), resultSet.getDouble(10),
+						resultSet.getDouble(11), resultSet.getDouble(12), resultSet.getDouble(13), resultSet.getDouble(14), resultSet.getDouble(15),
+						resultSet.getDouble(16), resultSet.getDouble(17), resultSet.getDouble(18), resultSet.getDouble(19), resultSet.getDouble(20));
+			}
+			preparedStatement.close();
+			connection.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bidPO;
 	}
 
 }
