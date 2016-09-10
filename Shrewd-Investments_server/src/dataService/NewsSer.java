@@ -6,9 +6,19 @@ import PO.NewsPO;
 import PO.SpecialNewsPO;
 
 public interface NewsSer {
-	//即时新闻
+	/**
+	 * 即时新闻
+	 * @param code为股票代码
+	 * @author 熊凯奇xiong kaiqi
+	 *
+	 */
 	public ArrayList<NewsPO> getNews();
 	
-	//信息地雷，code自然是股票编号
-	public ArrayList<SpecialNewsPO> getSpecialNews();
+	/**
+	 * 信息地雷
+	 * @param code为股票代码
+	 * @author 熊凯奇xiong kaiqi
+	 *
+	 */
+	public ArrayList<SpecialNewsPO> getSpecialNews(String code);
 }
