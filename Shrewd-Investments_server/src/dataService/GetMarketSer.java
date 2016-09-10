@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import PO.NowStockPO;
 import PO.ShortPO;
+import PO.StockPO;
 
 public interface GetMarketSer {
 	//行情页面中显示6个指数实时大小时用的
@@ -15,5 +16,5 @@ public interface GetMarketSer {
 	
 	
 	//显示指数历史数据所用，code同上,180个
-	public ArrayList<NowStockPO> getHistoryMarket(String code);
+	public ArrayList<StockPO> getHistoryMarket(String code);
 }

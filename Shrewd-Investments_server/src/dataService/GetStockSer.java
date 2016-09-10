@@ -9,8 +9,8 @@ import PO.StockBasicPO;
 import PO.StockPO;
 
 public interface GetStockSer {
-	//code为sha,shb,sza,szb分别对应上证，深证A，B股，
-	//small,gem,risk分别对应中小板，创业板和风险警示板
+	//code为sh,sz,cyb，
+	//small,risk分别对应中小板,风险警示板
 	//显示的是里面的数据，后面三个会麻烦一点，辛苦了
 	public ArrayList<NowStockPO> getNowStock(String code);
 	
