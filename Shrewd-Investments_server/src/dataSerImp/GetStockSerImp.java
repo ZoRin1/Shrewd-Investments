@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import PO.BidPO;
 import PO.BigChangePO;
 import PO.NowStockPO;
 import PO.ShortPO;
@@ -210,6 +211,12 @@ public class GetStockSerImp implements GetStockSer {
 
 	@Override
 	public StockBasicPO getStockBasic(String code) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	public BidPO getBid(String code) {
 		// TODO 自动生成的方法存根
 		return null;
 	}
