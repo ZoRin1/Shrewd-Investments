@@ -33,6 +33,8 @@ public class InvestSerImp implements InvestSer {
 				distributePOs.add(new DistributePO(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getString(4),
 						resultSet.getDouble(5), resultSet.getDouble(6)));
 			}
+			preparedStatement.close();
+			connection.close();
 		} catch (ClassNotFoundException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();

@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import PO.BigChangePO;
 import PO.CashflowPO;
@@ -16,6 +17,7 @@ import PO.ShortPO;
 import PO.StockPO;
 import sun.net.www.content.image.gif;
 import sun.print.PSPrinterJob.PluginPrinter;
+import sun.util.logging.resources.logging;
 
 public class test {
 
@@ -60,11 +62,14 @@ public class test {
 //		for (int i = 0; i < nowStockPOs.size(); i++) {
 //			System.out.println(nowStockPOs.get(i).getName());
 //		}
-
-		InvestSerImp investSerImp=new InvestSerImp();
-		System.out.println(investSerImp.getHolds("603077", "20141").getRatio());
+//
+//		InvestSerImp investSerImp=new InvestSerImp();
+//		System.out.println(investSerImp.getHolds("603077", "20141").getRatio());
 		
-		
+//		LoginDataSerImp loginDataSerImp=new LoginDataSerImp();
+//		loginDataSerImp.delete("www", "600000");
+		NewsSerImp newsSerImp=new NewsSerImp();
+		System.out.println(newsSerImp.getSpecialNews("000409").get(0).getTitle());
 	}
 
 }
