@@ -15,7 +15,7 @@ public class zixuanFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(android.R.layout.zixuanFrag,null);
+        //View view = inflater.inflate(android.R.layout.zixuanFrag,null);
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }
