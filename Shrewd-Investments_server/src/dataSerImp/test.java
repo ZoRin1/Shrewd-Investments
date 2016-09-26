@@ -15,9 +15,6 @@ import PO.OperationPO;
 import PO.ReportPO;
 import PO.ShortPO;
 import PO.StockPO;
-import sun.net.www.content.image.gif;
-import sun.print.PSPrinterJob.PluginPrinter;
-import sun.util.logging.resources.logging;
 
 public class test {
 
